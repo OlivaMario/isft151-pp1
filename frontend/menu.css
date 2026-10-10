@@ -1,0 +1,54 @@
+.contenedor {
+            position: relative;
+            display: inline-block;
+        }
+        .contenedor img {
+            width: 500px;
+            height: 500px;
+        }
+        .contenedor button {
+            position: absolute;  
+            transform: translateX(-50%);
+
+            width: 190px;       
+            height: 70px;      
+            background-color: #8c0520; 
+            color: rgb(241, 239, 239);       
+            font-size: 20px;    
+            border: none;       
+            border-radius: 8px; 
+            cursor: pointer;    
+        }
+        .btn-retirar {
+           top: 160px;
+           left: 350px;
+        }
+        .btn-transferencia {
+           top: 160px;
+           left: 150px;
+        }
+        .btn-consultar {
+           top: 250px;
+           left: 350px;
+        }
+        .btn-claves {
+           top: 250px;
+           left: 150px;
+        }
+        .btn-otras {
+           top: 335px;
+           left: 150px;
+        }
+        .btn-cuentas {
+           top: 335px;
+           left: 350px;
+        }
+        .btn-solicitudes {
+           top: 425px;
+           left: 150px;
+        }
+        .btn-salir {
+           top: 425px;
+           left: 350px;
+        }
+

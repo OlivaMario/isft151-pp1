@@ -1,0 +1,25 @@
+
+.contenedor {
+            position: relative;
+            display: inline-block;
+        }
+        .contenedor img {
+            width: 500px;
+            height: 500px;
+        }
+        .contenedor button {
+            position: absolute;
+            top: 375px;  
+            left: 110px;  
+            transform: translateX(-50%);
+
+            width: 190px;       
+            height: 70px;      
+            background-color: #8c0520;  
+            color: rgb(241, 239, 239);       
+            font-size: 20px;    
+            border: none;       
+            border-radius: 8px; 
+            cursor: pointer;    
+        }
+

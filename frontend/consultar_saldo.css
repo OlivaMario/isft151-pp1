@@ -1,0 +1,54 @@
+.contenedor {
+            position: relative;
+            display: inline-block;
+        }
+        .contenedor img {
+            width: 500px;
+            height: 500px;
+        }
+        .contenedor button {
+            position: absolute;  
+            transform: translateX(-50%);
+
+            width: 190px;       
+            height: 70px;      
+            background-color: #8c0520; 
+            color: rgb(241, 239, 239);       
+            font-size: 20px;    
+            border: none;       
+            border-radius: 8px; 
+            cursor: pointer;    
+        }
+        .btn-caja_dolares {
+           top: 160px;
+           left: 350px;
+        }
+        .btn-caja_pesos {
+           top: 160px;
+           left: 150px;
+        }
+        .btn-corriente_dolares {
+           top: 250px;
+           left: 350px;
+        }
+        .btn-corriente_pesos {
+           top: 250px;
+           left: 150px;
+        }
+        .btn-especial_pesos {
+           top: 335px;
+           left: 150px;
+        }
+        .btn-especial_dolares {
+           top: 335px;
+           left: 350px;
+        }
+        .btn-credito {
+           top: 425px;
+           left: 150px;
+        }
+        .btn-menu_principal {
+           top: 425px;
+           left: 350px;
+        }
+
