@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+     <title></title>
+     <link rel="stylesheet" href="saldo_corriente_dolares.css">
+ </head>
+
+ <body>   
+     <div class="contenedor">
+         <img src="../imagenes/saldo_corriente_dolares.png">
+         <p id="saldoActualCorrienteDolares" class="saldoActual-texto"></p>
+         <p id="saldoDisponibleCorrienteDolares" class="saldoDisponible-texto"></p>
+         <button id="buttonSalir" class="btn-salir">NO</button>
+         <button id="buttonVolverMenu" class="btn-menu_principal">SI</button>
+     </div>
+
+</body>
+<script src="../backend/cajero.js"></script>
+<script>
+    window.onload = () => {
+        miCajeroAutomatico.consultar_saldo_corriente_dolares();
+    };
+</script>
+<script>
+    iniciar_controlador();
+</script>
+
+</html>

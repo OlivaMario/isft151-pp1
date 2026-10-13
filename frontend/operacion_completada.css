@@ -1,0 +1,30 @@
+.contenedor {
+            position: relative;
+            display: inline-block;
+        }
+        .contenedor img {
+            width: 500px;
+            height: 500px;
+        }
+        .contenedor button {
+            position: absolute;  
+            transform: translateX(-50%);
+
+            width: 190px;       
+            height: 70px;      
+            background-color: #8c0520; 
+            color: rgb(241, 239, 239);       
+            font-size: 20px;    
+            border: none;       
+            border-radius: 8px; 
+            cursor: pointer;    
+        }
+        .btn-salir {
+           top: 425px;
+           left: 350px;
+        }
+        .btn-menu_principal {
+           top: 340px;
+           left: 350px;
+        }
+    
