@@ -74,8 +74,6 @@ class CajeroAutomatico
 	}
 	consultar_saldo()
 	{
-		const saldoActual = document.getElementById("saldoActual");
-		const saldoDisponible = document.getElementById("saldoDisponible");
         if (saldoActual) {
         saldoActual.textContent = "$" + this.saldo;
     }
@@ -85,8 +83,6 @@ class CajeroAutomatico
 	}
 	consultar_saldo_dolares()
 	{
-		const saldoActualDolares = document.getElementById("saldoActualDolares");
-		const saldoDisponibleDolares = document.getElementById("saldoDisponibleDolares");
         if (saldoActualDolares) {
         saldoActualDolares.textContent = "$" + this.saldo_dolares;
     }
@@ -96,8 +92,6 @@ class CajeroAutomatico
 	}
 	consultar_saldo_corriente_pesos()
 	{
-		const saldoActualCorrientePesos = document.getElementById("saldoActualCorrientePesos");
-		const saldoDisponibleCorrientePesos = document.getElementById("saldoDisponibleCorrientePesos");
         if (saldoActualCorrientePesos) {
         saldoActualCorrientePesos.textContent = "$" + this.saldo_corriente_pesos;
     }
@@ -107,8 +101,6 @@ class CajeroAutomatico
 	}
 	consultar_saldo_corriente_dolares()
 	{
-		const saldoActualCorrienteDolares = document.getElementById("saldoActualCorrienteDolares");
-		const saldoDisponibleCorrienteDolares = document.getElementById("saldoDisponibleCorrienteDolares");
         if (saldoActualCorrienteDolares) {
         saldoActualCorrienteDolares.textContent = "$" + this.saldo_corriente_dolares;
     }
