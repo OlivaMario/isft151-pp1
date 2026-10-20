@@ -3,6 +3,7 @@ class CajeroAutomatico
 	constructor( )
 	{
 		this.saldo = 100500;
+		this.pin = 1234;
 		this.numero_cuenta = 123456;
         this.limite_extraccion = 50000;
 		this.sesion = false;
@@ -12,10 +13,11 @@ class CajeroAutomatico
 		this.limite_extraccion_corriente_pesos = 10000;
 		this.saldo_corriente_dolares = 10000;
 		this.limite_extraccion_corriente_dolares = 5000;
+		this.clave_nueva = null;
 	}
     validar_pin(numero_pin)
 	{
-		if ( numero_pin == 1234 )
+		if ( numero_pin == this.pin )
 		{
 			this.sesion = true;
 			this.guardar_estado();
@@ -72,6 +74,32 @@ class CajeroAutomatico
 			alert('No posee saldo suficiente');
 		}
 	}
+	depositar_pesos(monto_deposito)
+	{
+			if (this.sesion === true && monto_deposito > 0)
+		{
+			this.saldo = this.saldo + monto_deposito;
+			this.limite_extraccion = this.limite_extraccion + monto_deposito;
+			this.guardar_estado();
+		}
+		else
+		{
+			alert('Ingrese un monto valido');
+		}
+	}
+	depositar_dolares(monto_deposito_dolares)
+	{
+			if (this.sesion === true && monto_deposito_dolares > 0)
+		{
+			this.saldo_dolares = this.saldo_dolares + monto_deposito_dolares;
+			this.limite_extraccion_dolares = this.limite_extraccion_dolares + monto_deposito_dolares;
+			this.guardar_estado();
+		}
+		else
+		{
+			alert('Ingrese un monto valido');
+		}
+	}
 	consultar_saldo()
 	{
         if (saldoActual) {
@@ -114,10 +142,13 @@ class CajeroAutomatico
     localStorage.setItem("sesion", this.sesion);
 	localStorage.setItem("saldo_dolares", this.saldo_dolares);
     localStorage.setItem("limite_dolares", this.limite_extraccion_dolares);
+	localStorage.setItem("pin", this.pin);
+	localStorage.setItem("clave_nueva", this.clave_nueva);
 }
 	salir()
 	{
 			this.sesion = false;
+			this.guardar_estado();
 			alert('Gracias por utilizar el cajero');
 	}
 }
@@ -125,11 +156,14 @@ class CajeroAutomatico
 
 let miCajeroAutomatico = new CajeroAutomatico();
 
+miCajeroAutomatico.pin = parseInt(localStorage.getItem("pin")) || 1234;
 miCajeroAutomatico.saldo = parseInt(localStorage.getItem("saldo")) ?? 100500;
 miCajeroAutomatico.limite_extraccion = parseInt(localStorage.getItem("limite")) ?? 50000;
 miCajeroAutomatico.sesion = localStorage.getItem("sesion") === "true";
 miCajeroAutomatico.saldo_dolares = parseInt(localStorage.getItem("saldo_dolares")) ?? 50000;
 miCajeroAutomatico.limite_extraccion_dolares = parseInt(localStorage.getItem("limite_dolares")) ?? 30000;
+miCajeroAutomatico.clave_nueva = parseInt(localStorage.getItem("clave_nueva")) || null;
+
 
 
 function iniciar_controlador() {
@@ -319,6 +353,53 @@ if (buttonConfirmarImporteDolares) {
         }
     };
 }
+const buttonDepositar = document.getElementById("buttonDepositar");
+	if (buttonDepositar) {
+	buttonDepositar.onclick = () => 
+	{
+         window.location.href = "elegir_cuenta_deposito.html";
+    }
+};
+const buttonCajaAhorroPesosDeposito = document.getElementById("buttonCajaAhorroPesosDeposito");
+	if (buttonCajaAhorroPesosDeposito) {
+	buttonCajaAhorroPesosDeposito.onclick = () => 
+	{ 	  
+         window.location.href = "depositar_pesos.html";
+	}
+    };
+	const buttonCajaAhorroDolaresDeposito = document.getElementById("buttonCajaAhorroDolaresDeposito");
+	if (buttonCajaAhorroDolaresDeposito) {
+	buttonCajaAhorroDolaresDeposito.onclick = () => 
+	{ 	  
+         window.location.href = "depositar_dolares.html";
+	}
+    };
+const buttonConfirmarDepositoPesos = document.getElementById("buttonConfirmarDepositoPesos");
+if (buttonConfirmarDepositoPesos) {
+    buttonConfirmarDepositoPesos.onclick = () => {
+        let monto_deposito = parseInt(document.getElementById("inputDepositoPesos").value);
+
+        if (!isNaN(monto_deposito) && monto_deposito > 0) {
+            miCajeroAutomatico.depositar_pesos(monto_deposito);
+            window.location.href = "operacion_completada.html";
+        } else {
+            alert("Por favor ingrese un número válido.");
+        }
+    };
+}
+const buttonConfirmarDepositoDolares = document.getElementById("buttonConfirmarDepositoDolares");
+if (buttonConfirmarDepositoDolares) {
+    buttonConfirmarDepositoDolares.onclick = () => {
+        let monto_deposito_dolares = parseInt(document.getElementById("inputDepositoDolares").value);
+
+        if (!isNaN(monto_deposito_dolares) && monto_deposito_dolares > 0) {
+            miCajeroAutomatico.depositar_dolares(monto_deposito_dolares);
+            window.location.href = "operacion_completada.html";
+        } else {
+            alert("Por favor ingrese un número válido.");
+        }
+    };
+}
 const buttonTransferencia = document.getElementById("buttonTransferencia");
 	if (buttonTransferencia) {
 	buttonTransferencia.onclick = () => 
@@ -348,6 +429,53 @@ if (buttonConfirmarTransferencia) {
             window.location.href = "operacion_completada.html";
         } else {
             alert("Por favor ingrese un monto válido.");
+        }
+    };
+}
+const buttonClaves = document.getElementById("buttonClaves");
+	if (buttonClaves) {
+	buttonClaves.onclick = () => 
+	{
+         window.location.href = "clave_actual.html";
+    }
+};
+const buttonConfirmarClaveActual = document.getElementById("buttonConfirmarClaveActual");
+if (buttonConfirmarClaveActual) {
+    buttonConfirmarClaveActual.onclick = () => {
+        let clave_actual = parseInt(document.getElementById("inputClaveActual").value);
+
+        if (clave_actual === miCajeroAutomatico.pin) {
+            window.location.href = "clave_nueva.html";
+        } else {
+            alert("Clave incorrecta.");
+        }
+    };
+}
+const buttonConfirmarClaveNueva = document.getElementById("buttonConfirmarClaveNueva");
+if (buttonConfirmarClaveNueva) {
+    buttonConfirmarClaveNueva.onclick = () => {
+        let clave_nueva = parseInt(document.getElementById("inputClaveNueva").value);
+
+        if (clave_nueva.toString().length !== 4) {
+			alert("La nueva clave debe tener 4 digitos.");
+        } else {
+			miCajeroAutomatico.clave_nueva = clave_nueva;
+			miCajeroAutomatico.guardar_estado();
+            window.location.href = "repetir_clave.html";
+        }
+    };
+}
+const buttonRepetirClave = document.getElementById("buttonRepetirClave");
+if (buttonRepetirClave) {
+    buttonRepetirClave.onclick = () => {
+        let clave_repetida = parseInt(document.getElementById("inputRepetirClave").value);
+
+        if (clave_repetida === miCajeroAutomatico.clave_nueva) {
+			miCajeroAutomatico.pin = miCajeroAutomatico.clave_nueva;
+			miCajeroAutomatico.guardar_estado();
+			window.location.href = "operacion_completada.html";
+        } else {
+			alert("Clave incorrecta.");
         }
     };
 }

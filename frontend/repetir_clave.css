@@ -1,0 +1,41 @@
+.contenedor {
+            position: relative;
+            display: inline-block;
+        }
+        .contenedor img {
+            width: 500px;
+            height: 500px;
+        }
+        .contenedor button {
+            position: absolute;  
+            transform: translateX(-50%);
+
+            width: 190px;       
+            height: 70px;      
+            background-color: #8c0520; 
+            color: rgb(241, 239, 239);       
+            font-size: 20px;    
+            border: none;       
+            border-radius: 8px; 
+            cursor: pointer;    
+        }
+        .btn-confirmar {
+           top: 340px;
+           left: 350px;
+        }
+        .btn-menu_principal {
+           top: 425px;
+           left: 350px;
+        }
+        .campo_pin {
+            position: absolute;   
+            top: 210px;           
+            left: 190px;         
+            width: 150px;
+            height: 48px;
+            font-size: 18px;
+            text-align: center;
+            border: 2px solid #6b0318;
+            
+        }
+
