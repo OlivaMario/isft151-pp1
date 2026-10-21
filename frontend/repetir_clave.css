@@ -38,4 +38,12 @@
             border: 2px solid #6b0318;
             
         }
+        .texto{
+            position: absolute;
+            top: 140px;     
+            left: 110px;    
+            color: rgb(0, 0, 0);
+            font-size: 26px;
+            font-weight: bold;
+        }
 
