@@ -34,7 +34,11 @@ La aplicación muestra un cajero automático con sus partes físicas (pantalla t
 - **Requerimientos Funcionales**  
   [Abrir planilla](https://docs.google.com/spreadsheets/d/1Ff3EqMrZeURV9coUC0zHdmu7m6XiRF2w55-JP-tjUfg/edit?usp=sharing)
 
+## Despliegue
 
+El sitio estático se publica desde la carpeta `frontend` con GitHub Pages mediante el flujo definido en `.github/workflows/despliegue.yml`.
+
+Enlace de despliegue: [Simulador de cajero automático](https://olivamario.github.io/isft151-pp1/)
 
 ## Estructura
 
