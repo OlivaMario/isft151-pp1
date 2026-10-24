@@ -1,11 +1,6 @@
 # Release
 
-## Descripción
+- `verificar.sh`: comprueba que existan los archivos del frontend antes de desplegar.
+- El despliegue lo ejecuta GitHub Actions con `.github/workflows/despliegue.yml` en cada push a `main`.
 
-Esta carpeta contiene scripts y archivos necesarios para preparar el entorno y desplegar la aplicación.
-
-## Contenido
-
-- Scripts de despliegue.
-- Configuración de producción.
-- Utilidades de automatización.
+Para activarlo: en el repositorio, ir a Settings, Pages, y elegir GitHub Actions como fuente.

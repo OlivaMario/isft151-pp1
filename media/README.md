@@ -1,12 +1,3 @@
 # Media
 
-## Descripción
-
-Esta carpeta almacena material gráfico e institucional relacionado con el proyecto.
-
-## Contenido
-
-- Imágenes.
-- Capturas de pantalla.
-- Logotipos.
-- Recursos multimedia.
+Material de difusión institucional del programa de inclusión digital bancaria: afiches, capturas y videos de presentación.

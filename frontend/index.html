@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Simulador de cajero automático</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<div class="contenedor">
+    <main class="cajero" id="equipo" data-red="banelco">
+        <div class="marca">
+            <img class="logo" id="logo" src="img/logo-isft.png" alt="Logo del Instituto Superior de Formación Técnica N°151">
+            <span id="nombreRed">RED BANELCO</span>
+        </div>
+        <div class="zonaPantalla">
+            <div class="lateral" id="ladoIzquierdo"></div>
+            <div class="pantalla" aria-live="polite">
+                <h2 id="tituloPantalla"></h2>
+                <div class="cuerpo">
+                    <div class="mensaje" id="mensajePantalla"></div>
+                    <div class="clave" id="clavePantalla"></div>
+                    <div class="opciones" id="opcionesPantalla"></div>
+                </div>
+            </div>
+            <div class="lateral" id="ladoDerecho"></div>
+        </div>
+        <div class="inferior">
+            <div class="teclado" id="teclado"></div>
+            <div class="dispositivos">
+                <div class="dispositivo ancho">
+                    Ranura de tarjeta
+                    <button class="ranura" id="ranuraTarjeta" aria-label="Ranura de la tarjeta"><span class="tarjeta"></span></button>
+                </div>
+                <div class="dispositivo">
+                    Depósito
+                    <button class="ranura" id="ranuraDeposito" aria-label="Ranura de depósito de billetes"></button>
+                </div>
+                <div class="dispositivo">Lector de huella<div class="huella"></div></div>
+                <div class="dispositivo">Billetes<div class="dispensador" id="dispensador"></div></div>
+                <div class="dispositivo">Comprobante<div class="dispensador" id="salidaComprobante"></div></div>
+            </div>
+        </div>
+        <footer class="integrantes">
+            <strong>Integrantes</strong>
+            <ul>
+                <li>Gambini Matias</li>
+                <li>Marcovecchio Mijael</li>
+                <li>Oliva Mario</li>
+                <li>Squirru Pedro</li>
+            </ul>
+        </footer>
+    </main>
+    <aside class="asistente">
+        <h3>Asistente paso a paso</h3>
+        <div class="paso" id="paso"></div>
+        <div class="controles">
+            <button id="botonRepetir">Repetir indicación</button>
+            <button id="botonVoz" aria-pressed="false">Voz: desactivada</button>
+            <select id="selectorRed" aria-label="Red bancaria">
+                <option value="banelco">Red Banelco</option>
+                <option value="link">Red Link</option>
+            </select>
+            <button id="botonReiniciar">Reiniciar práctica</button>
+        </div>
+        <dl class="glosario">
+            <dt>PIN</dt><dd>Clave numérica personal de 4 dígitos. Para practicar usá 1234.</dd>
+            <dt>Saldo</dt><dd>Dinero disponible en tu cuenta.</dd>
+            <dt>Extracción</dt><dd>Retirar billetes del cajero.</dd>
+            <dt>Transferencia</dt><dd>Enviar dinero a la cuenta de otra persona.</dd>
+            <dt>Depósito</dt><dd>Poner billetes en tu cuenta.</dd>
+            <dt>Comprobante</dt><dd>Papel que confirma la operación realizada.</dd>
+        </dl>
+        <p class="aviso">Simulador educativo: no usa dinero ni datos reales. Las pantallas son una representación y no reproducen el diseño oficial de las redes. Podés tocar las opciones directamente en la pantalla o usar los botones laterales.</p>
+    </aside>
+</div>
+<script src="simulador.js"></script>
+</body>
+</html>

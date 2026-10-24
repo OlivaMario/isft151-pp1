@@ -1,13 +1,5 @@
 # Backend
 
-## Descripción
+El proyecto se despliega como sitio estático. Toda la lógica de la simulación (cuenta, PIN, saldo y operaciones) se ejecuta en el navegador, dentro de `frontend`.
 
-Esta carpeta contiene la lógica de negocio del proyecto.
-
-## Responsabilidades
-
-- Gestión de usuarios.
-- Validación de operaciones.
-- Manejo de saldos.
-- Procesamiento de transferencias.
-- Persistencia de datos.
+Esta carpeta queda reservada para una futura capa de servidor.
