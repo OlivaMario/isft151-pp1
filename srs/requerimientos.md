@@ -21,7 +21,6 @@ Ordenados según la secuencia lógica de construcción.
 | RF13 | Devolución de tarjeta | Cierre de sesión con retiro de tarjeta | Gambini | Definir | Alta | Terminado |
 | RF14 | Asistente guiado | Indicación de cada paso en texto y voz, con repetición | Marcovecchio | Definir | Muy alta | Terminado |
 | RF15 | Selección de red | Cambio entre Banelco y Link | Oliva | Definir | Media | Terminado |
-| RF16 | Pantallas fieles a la red | Reemplazar el diseño genérico por capturas reales de cada red | Squirru | Definir | Alta | Pendiente |
 
 ## Requerimientos no funcionales
 
