@@ -40,6 +40,12 @@ El sitio estático se publica desde la carpeta `frontend` con GitHub Pages media
 
 Enlace de despliegue: [Simulador de cajero automático](https://olivamario.github.io/isft151-pp1/)
 
+## Tutorial de uso
+
+Video que explica cómo usar el simulador de cajero automático. Tocá la imagen para verlo en YouTube.
+
+[![Tutorial del simulador de cajero automático](https://img.youtube.com/vi/p3Xvq4aSdIg/hqdefault.jpg)](https://youtu.be/p3Xvq4aSdIg)
+
 ## Estructura
 
 - `api`: documentación de la API.
